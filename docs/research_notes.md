@@ -36,6 +36,8 @@ GEI is considered because it is simple, interpretable, and appropriate for estab
 
 ## Current Decision
 
-For Project 1, CASIA-B is preferred because it provides a simpler, controlled environment and silhouette data that can be used to build a low-complexity GEI baseline.
+For Project 1, CASIA-B is currently preferred because it provides a simpler, controlled environment and silhouette data suitable for building a low-complexity baseline biometric system.
 
-GEI is being used as the initial representation because it is simple, interpretable, and provides a baseline that can later be compared with sequence-based or skeleton-based approaches.
+GEI is currently preferred as the baseline representation because it is simple, interpretable, and computationally inexpensive. It also provides a useful reference point for comparing more advanced sequence-based, skeleton-based, or multimodal gait representations in Projects 2 and 3.
+
+This decision may still change if dataset access or further experimentation shows that another option is more suitable.
