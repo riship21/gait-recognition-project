@@ -8,28 +8,28 @@ def preprocess_silhouette(image_path, output_size=(128, 128)):
     image = Image.open(image_path).convert("L")
     img = np.array(image)
 
-    # Find all foreground (white) pixels
+    # Find foreground pixels
     coords = np.argwhere(img > 0)
 
     if len(coords) == 0:
         return None
 
-    # Bounding box of the silhouette
+    # Find silhouette bounding box
     y_min, x_min = coords.min(axis=0)
     y_max, x_max = coords.max(axis=0)
 
     # Crop around the person
     cropped = img[y_min:y_max + 1, x_min:x_max + 1]
 
-    # Convert back to PIL
     cropped_img = Image.fromarray(cropped)
 
     # Resize while preserving aspect ratio
     cropped_img.thumbnail(output_size)
 
-    # Create centered black canvas
+    # Create black canvas
     canvas = Image.new("L", output_size, 0)
 
+    # Center silhouette
     x_offset = (output_size[0] - cropped_img.width) // 2
     y_offset = (output_size[1] - cropped_img.height) // 2
 
@@ -38,6 +38,8 @@ def preprocess_silhouette(image_path, output_size=(128, 128)):
     return canvas
 
 
+# Everything below here runs ONLY when preprocess.py
+# is executed directly.
 if __name__ == "__main__":
 
     sequence_path = Path(
@@ -48,7 +50,6 @@ if __name__ == "__main__":
 
     print(f"Number of frames: {len(frames)}")
 
-    # Pick a few frames across the sequence
     indices = [
         0,
         len(frames) // 4,
@@ -61,30 +62,30 @@ if __name__ == "__main__":
 
     fig, axes = plt.subplots(2, len(selected), figsize=(12, 6))
 
-for i, frame_path in enumerate(selected):
+    for i, frame_path in enumerate(selected):
 
-    # Original image
-    original = Image.open(frame_path).convert("L")
+        # Original
+        original = Image.open(frame_path).convert("L")
 
-    axes[0, i].imshow(original, cmap="gray")
-    axes[0, i].set_title(frame_path.name)
-    axes[0, i].axis("off")
+        axes[0, i].imshow(original, cmap="gray")
+        axes[0, i].set_title(frame_path.name)
+        axes[0, i].axis("off")
 
-    # Preprocessed image
-    processed = preprocess_silhouette(frame_path)
+        # Preprocessed
+        processed = preprocess_silhouette(frame_path)
 
-    axes[1, i].imshow(processed, cmap="gray")
-    axes[1, i].axis("off")
+        axes[1, i].imshow(processed, cmap="gray")
+        axes[1, i].axis("off")
 
-axes[0, 0].set_ylabel("Original")
-axes[1, 0].set_ylabel("Preprocessed")
+    axes[0, 0].set_ylabel("Original")
+    axes[1, 0].set_ylabel("Preprocessed")
 
-plt.tight_layout()
+    plt.tight_layout()
 
-plt.savefig(
-    "results/figures/subject001_preprocessing_comparison.png",
-    dpi=150,
-    bbox_inches="tight"
-)
+    plt.savefig(
+        "results/figures/subject001_preprocessing_comparison.png",
+        dpi=150,
+        bbox_inches="tight"
+    )
 
-plt.show()
+    plt.show()
