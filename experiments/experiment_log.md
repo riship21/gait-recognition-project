@@ -67,3 +67,23 @@ More stable body regions, such as the torso, appear brighter. Moving regions, es
 
 ### Next Step
 Generate GEIs for multiple walking sequences and compare whether samples from the same subject produce similar gait representations.
+
+
+## Experiment 4 - Compare GEIs across same-subject walking sequences
+
+### Observation
+
+The six GEIs from Subject 001 are visually similar even though the
+walking sequences contain different numbers of frames.
+
+The main body shape remains consistent across the sequences, while
+small differences appear around the arms and legs due to natural
+variation in the walking motion.
+
+This suggests that GEI captures relatively consistent gait information
+for the same subject.
+
+### Next Step
+
+Generate GEIs from different subjects and compare them to determine
+whether there is enough inter-class variation for identification.
