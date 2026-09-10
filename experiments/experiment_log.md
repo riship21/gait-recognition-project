@@ -148,3 +148,33 @@ evaluation.
 
 Quantitatively compare same-subject and different-subject GEIs using
 distance scores.
+
+
+## Experiment 7 - Quantitative GEI Distance Comparison
+
+### Goal
+
+Verify that GEIs from the same subject are numerically more similar
+than GEIs from different subjects.
+
+### Method
+
+Euclidean distance was calculated between:
+
+- Subject 001 nm-01 and Subject 001 nm-02
+- Subject 001 nm-01 and Subject 002 nm-01
+
+### Result
+
+- Same-subject distance: 4.2740
+- Different-subject distance: 9.4212
+
+The same-subject GEIs had a smaller Euclidean distance than the different-subject GEIs.
+
+### Conclusion
+
+This supports the use of Euclidean distance as a simple matching method for the baseline gait identification system.
+
+### Next Step
+
+Build the full gallery/probe identification system and evaluate it across the CASIA-B subjects.
