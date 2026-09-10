@@ -87,3 +87,64 @@ for the same subject.
 
 Generate GEIs from different subjects and compare them to determine
 whether there is enough inter-class variation for identification.
+
+
+## Experiment 5 - Compare GEIs across different-subject walking sequences
+
+### Observation
+
+The GEIs from different subjects show visible differences in body shape
+and walking motion, which suggests useful inter-class variation.
+
+Most sequences contained approximately 47 to 68 frames. Subject 005,
+however, contained only 16 frames and produced a noticeably different
+and less stable GEI. This suggests that sequence length may affect the
+quality of the GEI representation and should be considered during
+evaluation.
+
+### Next Step
+
+Inspect the unusually short Subject 005 sequence and then quantitatively
+compare same-subject and different-subject GEIs using distance scores.
+
+
+## Experiment 6 - Dataset Quality Audit
+
+### Goal
+
+Determine whether the unusually short sequences observed for Subject 005
+also occur for other subjects.
+
+### Method
+
+Frame counts were calculated for all six normal walking sequences
+(nm-01 through nm-06) at the 090° view for all 124 subjects.
+
+### Result
+
+A total of 744 sequences were checked.
+
+- Median frame count: 60
+- Minimum frame count: 3
+- Maximum frame count: 86
+
+The only sequences containing fewer than 30 frames belonged to
+Subject 005:
+
+- nm-01: 16 frames
+- nm-02: 11 frames
+- nm-03: 6 frames
+- nm-04: 9 frames
+- nm-06: 3 frames
+
+### Conclusion
+
+Subject 005 is a clear frame-count outlier in the 090° normal walking
+data. For the main Project 1 baseline, Subject 005 will be excluded so
+that unreliable GEIs from extremely short sequences do not affect the
+evaluation.
+
+### Next Step
+
+Quantitatively compare same-subject and different-subject GEIs using
+distance scores.
