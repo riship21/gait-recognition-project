@@ -209,3 +209,29 @@ The result shows that the representation and simple distance-based matcher are s
 
 ### Next Step
 Inspect the incorrect matches and perform one small baseline comparison or improvement before finalizing Project 1.
+
+
+## Experiment 9 - Baseline Error Analysis
+
+### Goal
+
+Inspect the incorrect identifications produced by the baseline system.
+
+### Result
+
+The baseline produced 10 incorrect identifications out of 246 probes.
+
+- nm-05 produced 6 errors.
+- nm-06 produced 4 errors.
+- Subjects 093 and 095 were incorrectly identified in both probe
+  sequences.
+- The remaining errors occurred only once for their respective subjects.
+
+### Observation
+
+Most errors were isolated, but Subjects 093 and 095 were consistently difficult for the baseline system. This suggests that their GEI
+representations may be more similar to those of other subjects or may vary more between walking sequences.
+
+### Next Step
+
+Compare Euclidean distance with another simple matching method to see whether the choice of matcher affects baseline identification accuracy.
