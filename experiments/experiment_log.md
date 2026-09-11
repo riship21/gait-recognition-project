@@ -235,3 +235,34 @@ representations may be more similar to those of other subjects or may vary more 
 ### Next Step
 
 Compare Euclidean distance with another simple matching method to see whether the choice of matcher affects baseline identification accuracy.
+
+
+## Experiment 10 - Matcher Comparison
+
+### Goal
+
+Determine whether the choice of matching method affects the performance of the GEI baseline.
+
+### Setup
+
+The dataset, preprocessing, GEI representation, gallery/probe split, and subjects were kept identical to the baseline experiment.
+
+Two matching methods were compared:
+
+- Euclidean distance
+- Cosine similarity
+
+### Result
+
+- Euclidean distance: 236 / 246 correct (95.93%)
+- Cosine similarity: 235 / 246 correct (95.53%)
+
+### Conclusion
+
+Both matching methods produced very similar results. Euclidean distance performed slightly better, correctly identifying one additional probe.
+
+For the final Project 1 baseline, Euclidean distance will be used as the matcher.
+
+### Next Step
+
+Finalize the repository documentation, results, and reproducibility instructions for Project 1.
