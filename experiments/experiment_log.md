@@ -178,3 +178,34 @@ This supports the use of Euclidean distance as a simple matching method for the 
 ### Next Step
 
 Build the full gallery/probe identification system and evaluate it across the CASIA-B subjects.
+
+
+## Experiment 8 - Baseline Gait Identification
+
+### Goal
+Evaluate a complete closed-set gait identification system using GEIs.
+
+### Setup
+- Dataset: CASIA-B
+- View: 090°
+- Condition: normal walking
+- Subjects used: 123
+- Excluded subject: 005
+- Gallery: nm-01 through nm-04
+- Probe: nm-05 and nm-06
+- Representation: GEI
+- Matcher: Euclidean distance
+- Metric: Rank-1 identification accuracy
+
+### Result
+- Correct identifications: 236 / 246
+- Rank-1 accuracy: 95.93%
+- nm-05 accuracy: 95.12%
+- nm-06 accuracy: 96.75%
+
+### Conclusion
+The GEI-based baseline performs well under controlled normal-walking conditions.
+The result shows that the representation and simple distance-based matcher are sufficient for a functional baseline biometric system.
+
+### Next Step
+Inspect the incorrect matches and perform one small baseline comparison or improvement before finalizing Project 1.
